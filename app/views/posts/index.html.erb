@@ -1,0 +1,31 @@
+<h1>Posts</h1>
+
+<table border= "1">
+  <tr>
+    <th style="color:blue">Name</th>
+    <th style="color:blue">Title</th>  
+    <th style="color:blue">Content</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @posts.each do |post| %>
+  <tr>
+    <td><%= post.name %></td>
+    <td><%= post.title %></td>
+    <td><%= post.content %></td>
+    <td><%= link_to 'Show', post %></td>
+    <td><%= link_to 'Edit', edit_post_path(post) %></td>
+    <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<h2>
+<%= link_to 'New Post', new_post_path %>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+
+<%= link_to 'Home',{:action=>'index', :controller=>'home'}%>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+
+</h2>
